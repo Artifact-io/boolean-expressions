@@ -11,7 +11,7 @@ class BooleanExpressions {
     const truthGrammar = grammar(grammarRules);
     const matchResult = truthGrammar.match(exp);
     if (matchResult.failed()) {
-      throw new Error(`Parse failed ${matchResult.shortMessage}`);
+      throw new Error(`Parse failed ${matchResult.message}`);
     }
     this.variableNames = extractVariables(exp);
     this.evaluateFunc = createSemantics(truthGrammar, matchResult);
@@ -33,4 +33,4 @@ class BooleanExpressions {
   }
 }
 
-export default BooleanExpressions;
+export default BooleanExpressions
