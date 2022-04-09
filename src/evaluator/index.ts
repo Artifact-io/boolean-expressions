@@ -1,3 +1,3 @@
-import createSemantics from "./createSemantics";
+import createSemantics from "./createSemantics"
 
-export { createSemantics };
+export { createSemantics }

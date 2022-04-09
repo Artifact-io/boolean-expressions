@@ -166,6 +166,6 @@ const grammarRules = `
         | caseInsensitive<"nor">
       ) ~(char+)
   }
-`;
+`
 
-export default grammarRules;
+export default grammarRules
