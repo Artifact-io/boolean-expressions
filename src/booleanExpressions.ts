@@ -1,4 +1,4 @@
-import { grammar } from "ohm-js"
+import ohm from "ohm-js"
 import { grammarRules } from "./grammar"
 import { extractVariables } from "./util"
 import { createSemantics } from "./evaluator"
@@ -8,7 +8,7 @@ class BooleanExpressions {
 	private evaluateFunc: (variables: string[]) => boolean
 
 	constructor(exp: string) {
-		const truthGrammar = grammar(grammarRules)
+		const truthGrammar = ohm.grammar(grammarRules)
 		const matchResult = truthGrammar.match(exp)
 		if (matchResult.failed()) {
 			throw new Error(`Parse failed ${matchResult.message}`)
