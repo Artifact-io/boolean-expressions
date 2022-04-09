@@ -138,8 +138,11 @@ const grammarRules = `
     False
       = caseInsensitive<"false">
 
-    ident  (an identifier)
-      = ~keyword letter alnum*
+    char
+      = alnum | "_"
+
+    ident (an identifier)
+      = ~keyword char char*
 
     keyword
       = (
@@ -161,7 +164,7 @@ const grammarRules = `
         | caseInsensitive<"xnor">
         | caseInsensitive<"nand">
         | caseInsensitive<"nor">
-      ) ~(alnum+)
+      ) ~(char+)
   }
 `;
 
